@@ -2,44 +2,48 @@
 
 @baseUrl = http://localhost:8000/api
 
-# получение датчиков
+# получение датчиков    ListAPIView
 GET {{baseUrl}}/sensors/
 Content-Type: application/json
 
 ###
 
-# создание датчика
-POST {{baseUrl}}/sensors/
+# создание датчика   ListCreateAPIView 
+POST {{baseUrl}}/sensors_create/
 Content-Type: application/json
 
 {
-  "name": "ESP32",
-  "description": "Датчик на кухне за холодильником"
+  "title": "ESP32355",
+  "description": "Датчик на кухне за холодильником справа"
 }
 
 ###
 
-# обновление датчика
-PATCH {{baseUrl}}/sensors/1/
+# обновление датчика   UpdateAPIView 
+PATCH {{baseUrl}}/sensors_upp/2/  
 Content-Type: application/json
 
 {
-  "description": "Перенес датчик на балкон"
+  "description": "Перенес датчик на балкон за стол"
 }
 
 ###
 
-# добавление измерения
-POST {{baseUrl}}/measurements/
+# добавление измерения   
+POST   {{baseUrl}}/measurements/2/
 Content-Type: application/json
 
 {
-  "sensor": 1,
+  
+
+  "id": 2,
   "temperature": 22.3
+
+
 }
 
 ###
 
-# получение информации по датчику
-GET {{baseUrl}}/sensors/1/
+# получение информации по датчику        RetrieveAPIView
+GET {{baseUrl}}/sensors_get/2/
 Content-Type: application/json

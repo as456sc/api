@@ -6,7 +6,8 @@ urlpatterns = [
     path('sensors/',GetSensor.as_view()),
     path('sensors_create/',CreateSensor.as_view()),
     path('sensors_upp/<pk>/',UpdateSensor.as_view()),
-    path('measurements/<pk>/',Add_Temperature_Sensor.as_view()),
+    # path('measurements/<pk>/',Add_Temperature_Sensor.as_view()),
+    path('measurements/',Add_Temperature_Sensor.as_view()),
     path('sensors_get/<pk>/',GetSensorInformation.as_view())
 ]
 
